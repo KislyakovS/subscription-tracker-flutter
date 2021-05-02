@@ -11,15 +11,6 @@ class StatisticsScreen extends StatelessWidget {
           'Your statistics',
           style: TextStyle(fontSize: 25, color: Colors.black),
         ),
-        actions: [
-          IconButton(
-              icon: Icon(
-                Icons.search,
-                size: 30,
-                color: Colors.black,
-              ),
-              onPressed: () {})
-        ],
       ),
     );
   }

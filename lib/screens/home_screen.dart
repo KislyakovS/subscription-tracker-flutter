@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:subscription_tracker/screens/subscription_screen.dart';
 import 'package:subscription_tracker/widgets/widgets.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -9,7 +10,7 @@ class HomeScreen extends StatelessWidget {
         elevation: 0,
         centerTitle: false,
         title: Text(
-          'Subscription',
+          'Subscriptions',
           style: TextStyle(fontSize: 25, color: Colors.black),
         ),
         actions: [
@@ -26,7 +27,7 @@ class HomeScreen extends StatelessWidget {
         slivers: [
           SliverToBoxAdapter(
             child: Container(
-              padding: const EdgeInsets.symmetric(vertical: 20),
+              padding: const EdgeInsets.symmetric(vertical: 10),
               height: 200,
               child: ListView(
                 scrollDirection: Axis.horizontal,
@@ -35,13 +36,42 @@ class HomeScreen extends StatelessWidget {
                     if (index == 4) {
                       return Padding(
                         padding: const EdgeInsets.only(left: 20, right: 20),
-                        child: HorizontalCard(),
+                        child: GestureDetector(
+                          onTap: () => Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => SubscriptionScreen())),
+                          child: HorizontalCard(),
+                        ),
                       );
                     }
 
                     return Padding(
-                      padding: const EdgeInsets.only(left: 20),
-                      child: HorizontalCard(),
+                        padding: const EdgeInsets.only(left: 20),
+                        child: GestureDetector(
+                          onTap: () => Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => SubscriptionScreen())),
+                          child: HorizontalCard(),
+                        ));
+                  }).toList()
+                ],
+              ),
+            ),
+          ),
+          SliverToBoxAdapter(
+            child: Container(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: ListView(
+                scrollDirection: Axis.vertical,
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                children: [
+                  ...List.generate(10, (index) {
+                    return Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 10),
+                      child: VerticalCard(),
                     );
                   }).toList()
                 ],
