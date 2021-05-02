@@ -13,8 +13,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter subscriotions',
       theme: ThemeData(
-        scaffoldBackgroundColor: Colors.white,
-        appBarTheme: AppBarTheme(backgroundColor: Colors.white),
+        scaffoldBackgroundColor: Colors.grey[100],
+        appBarTheme: AppBarTheme(backgroundColor: Colors.grey[100]),
         primarySwatch: Colors.blue,
         splashColor: Colors.transparent,
         highlightColor: Colors.transparent,

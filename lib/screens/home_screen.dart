@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:subscription_tracker/widgets/widgets.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
@@ -19,6 +20,34 @@ class HomeScreen extends StatelessWidget {
                 color: Colors.black,
               ),
               onPressed: () {})
+        ],
+      ),
+      body: CustomScrollView(
+        slivers: [
+          SliverToBoxAdapter(
+            child: Container(
+              padding: const EdgeInsets.symmetric(vertical: 20),
+              height: 200,
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                children: [
+                  ...List.generate(5, (index) {
+                    if (index == 4) {
+                      return Padding(
+                        padding: const EdgeInsets.only(left: 20, right: 20),
+                        child: HorizontalCard(),
+                      );
+                    }
+
+                    return Padding(
+                      padding: const EdgeInsets.only(left: 20),
+                      child: HorizontalCard(),
+                    );
+                  }).toList()
+                ],
+              ),
+            ),
+          )
         ],
       ),
     );
