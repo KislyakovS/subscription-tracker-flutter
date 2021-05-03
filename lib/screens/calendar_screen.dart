@@ -13,15 +13,6 @@ class CalendarScreen extends StatelessWidget {
           'Calendar',
           style: TextStyle(fontSize: 25, color: Colors.black),
         ),
-        actions: [
-          IconButton(
-              icon: Icon(
-                Icons.search,
-                size: 30,
-                color: Colors.black,
-              ),
-              onPressed: () {})
-        ],
       ),
       body: CustomScrollView(
         slivers: [
@@ -34,7 +25,6 @@ class CalendarScreen extends StatelessWidget {
           ),
           SliverToBoxAdapter(
             child: Container(
-              //height: 400,
               padding: const EdgeInsets.all(20),
               decoration: BoxDecoration(
                 color: Colors.white,
