@@ -31,6 +31,7 @@ dependencies:
   flutter_datetime_picker: ^1.5.1
   currency_picker: ^2.0.3
   fl_chart: ^0.36.0
+  table_calendar: ^3.0.0
   
 
 dev_dependencies:

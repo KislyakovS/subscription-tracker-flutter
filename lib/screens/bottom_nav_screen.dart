@@ -15,6 +15,7 @@ class _BottomNavScreenState extends State<BottomNavScreen> {
     CalendarScreen(),
     SettingsScreen(),
   ];
+
   int _currentIndex = 0;
 
   @override
@@ -25,7 +26,7 @@ class _BottomNavScreenState extends State<BottomNavScreen> {
         elevation: 0,
         currentIndex: _currentIndex,
         onTap: (index) => setState(() => _currentIndex = index),
-        backgroundColor: Palette.background,
+        backgroundColor: _currentIndex == 3 ? Colors.white : Palette.background,
         type: BottomNavigationBarType.fixed,
         selectedItemColor: Colors.black,
         unselectedItemColor: Colors.grey,
@@ -40,7 +41,13 @@ class _BottomNavScreenState extends State<BottomNavScreen> {
           ),
           Icon(Icons.settings)
         ]
-            .map((icon) => BottomNavigationBarItem(label: '', icon: icon))
+            .map(
+              (icon) => BottomNavigationBarItem(
+                label: '',
+                icon: icon,
+                backgroundColor: Colors.white,
+              ),
+            )
             .toList(),
       ),
     );
