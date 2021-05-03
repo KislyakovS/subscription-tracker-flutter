@@ -8,6 +8,13 @@ class CreateCard extends StatelessWidget {
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(10),
+        // boxShadow: [
+        //   BoxShadow(
+        //     color: Colors.black12,
+        //     offset: Offset(0, 2),
+        //     blurRadius: 6.0,
+        //   )
+        // ],
       ),
       child: Row(
         children: [
@@ -15,15 +22,15 @@ class CreateCard extends StatelessWidget {
             borderRadius: BorderRadius.circular(10),
             child: Image.network(
               'https://cdn.vox-cdn.com/thumbor/QuS2QKQys3HhosKiV-2IuKhphbo=/39x0:3111x2048/1400x1050/filters:focal(39x0:3111x2048):format(png)/cdn.vox-cdn.com/uploads/chorus_image/image/49901753/netflixlogo.0.0.png',
-              width: 60,
-              height: 60,
+              width: 50,
+              height: 50,
               fit: BoxFit.cover,
             ),
           ),
-          const SizedBox(width: 20),
+          const SizedBox(width: 15),
           Text(
             'Netflix',
-            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
           )
         ],
       ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:subscription_tracker/config/palette.dart';
 import 'package:subscription_tracker/screens/screens.dart';
 
 class BottomNavScreen extends StatefulWidget {
@@ -24,7 +25,8 @@ class _BottomNavScreenState extends State<BottomNavScreen> {
         elevation: 0,
         currentIndex: _currentIndex,
         onTap: (index) => setState(() => _currentIndex = index),
-        backgroundColor: Colors.grey[100],
+        //backgroundColor: Colors.grey[100],
+        backgroundColor: Palette.background,
         type: BottomNavigationBarType.fixed,
         selectedItemColor: Colors.black,
         unselectedItemColor: Colors.grey,

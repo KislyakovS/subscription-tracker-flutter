@@ -43,8 +43,9 @@ class SubscriptionScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: 10),
                   Container(
-                    height: 200,
-                    color: Colors.red,
+                    height: 250,
+                    //color: Colors.red,
+                    child: Chart(),
                   ),
                   const SizedBox(height: 30),
                   Text(

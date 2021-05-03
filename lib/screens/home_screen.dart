@@ -62,18 +62,33 @@ class HomeScreen extends StatelessWidget {
           ),
           SliverToBoxAdapter(
             child: Container(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
               child: ListView(
                 scrollDirection: Axis.vertical,
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
                 children: [
+                  Text(
+                    'Active',
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                  ),
                   ...List.generate(10, (index) {
                     return Padding(
                       padding: const EdgeInsets.symmetric(vertical: 10),
                       child: VerticalCard(),
                     );
-                  }).toList()
+                  }).toList(),
+                  const SizedBox(height: 10),
+                  Text(
+                    'Paused',
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                  ),
+                  ...List.generate(3, (index) {
+                    return Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 10),
+                      child: VerticalCard(),
+                    );
+                  }).toList(),
                 ],
               ),
             ),

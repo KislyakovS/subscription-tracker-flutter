@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:subscription_tracker/config/palette.dart';
 import 'package:subscription_tracker/screens/screens.dart';
 
 void main() {
@@ -13,10 +14,12 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter subscriotions',
       theme: ThemeData(
-        scaffoldBackgroundColor: Colors.grey[100],
+        //scaffoldBackgroundColor: Colors.grey[100],
+        scaffoldBackgroundColor: Palette.background,
         appBarTheme: AppBarTheme(
-            titleTextStyle: TextStyle(color: Colors.black),
-            backgroundColor: Colors.grey[100]),
+          titleTextStyle: TextStyle(color: Colors.black),
+          backgroundColor: Palette.background,
+        ),
         primarySwatch: Colors.blue,
         splashColor: Colors.transparent,
         highlightColor: Colors.transparent,
