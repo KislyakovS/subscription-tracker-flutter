@@ -12,7 +12,7 @@ class _BottomNavScreenState extends State<BottomNavScreen> {
     HomeScreen(),
     StatisticsScreen(),
     NewSubscriptionScreen(),
-    SuspendedSubscriptionsScreen(),
+    CalendarScreen(),
     SettingsScreen(),
   ];
   int _currentIndex = 0;
@@ -25,21 +25,22 @@ class _BottomNavScreenState extends State<BottomNavScreen> {
         elevation: 0,
         currentIndex: _currentIndex,
         onTap: (index) => setState(() => _currentIndex = index),
-        //backgroundColor: Colors.grey[100],
         backgroundColor: Palette.background,
         type: BottomNavigationBarType.fixed,
         selectedItemColor: Colors.black,
         unselectedItemColor: Colors.grey,
         iconSize: 30,
         items: [
-          Icons.home_filled,
-          Icons.bar_chart,
-          Icons.add,
-          Icons.stop_circle_outlined,
-          Icons.settings
+          Icon(Icons.home_filled),
+          Icon(Icons.bar_chart),
+          Icon(Icons.add),
+          Icon(
+            Icons.calendar_today_rounded,
+            size: 22,
+          ),
+          Icon(Icons.settings)
         ]
-            .map((value) =>
-                BottomNavigationBarItem(label: '', icon: Icon(value)))
+            .map((icon) => BottomNavigationBarItem(label: '', icon: icon))
             .toList(),
       ),
     );

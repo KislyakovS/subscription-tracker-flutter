@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class SuspendedSubscriptionsScreen extends StatelessWidget {
+class CalendarScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -8,7 +8,7 @@ class SuspendedSubscriptionsScreen extends StatelessWidget {
         elevation: 0,
         centerTitle: false,
         title: Text(
-          'Suspended subscriptions',
+          'Calendar',
           style: TextStyle(fontSize: 25, color: Colors.black),
         ),
         actions: [
