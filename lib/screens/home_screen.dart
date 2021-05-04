@@ -72,7 +72,7 @@ class HomeScreen extends StatelessWidget {
                     'Active',
                     style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                   ),
-                  ...List.generate(10, (index) {
+                  ...List.generate(2, (index) {
                     return Padding(
                       padding: const EdgeInsets.symmetric(vertical: 10),
                       child: VerticalCard(),
@@ -83,7 +83,7 @@ class HomeScreen extends StatelessWidget {
                     'Paused',
                     style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                   ),
-                  ...List.generate(3, (index) {
+                  ...List.generate(2, (index) {
                     return Padding(
                       padding: const EdgeInsets.symmetric(vertical: 10),
                       child: VerticalCard(),
