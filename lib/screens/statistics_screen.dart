@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:subscription_tracker/widgets/widgets.dart';
 
@@ -17,14 +18,21 @@ class StatisticsScreen extends StatelessWidget {
         slivers: [
           SliverToBoxAdapter(
             child: Container(
-              // height: 300,
-              // padding: const EdgeInsets.all(10),
-              // margin: const EdgeInsets.all(10),
-              // decoration: BoxDecoration(
-              //   color: Colors.white,
-              //   borderRadius: BorderRadius.circular(20),
-              // ),
-              // child: Chart(),
+              margin: const EdgeInsets.all(10),
+              padding: const EdgeInsets.symmetric(horizontal: 10),
+              child: CupertinoSlidingSegmentedControl(
+                children: {
+                  0: Text('Segment 1'),
+                  1: Text('Segment 2'),
+                  2: Text('Segment 3'),
+                },
+                groupValue: 1,
+                onValueChanged: (index) {},
+              ),
+            ),
+          ),
+          SliverToBoxAdapter(
+            child: Container(
               padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 24),
               margin: const EdgeInsets.all(10),
               decoration: BoxDecoration(
