@@ -35,72 +35,77 @@ class SettingsScreen extends StatelessWidget {
               margin: const EdgeInsets.only(top: 5),
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Container(
-                height: 400,
                 padding: const EdgeInsets.all(20),
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(20),
-                  // boxShadow: [
-                  //   BoxShadow(
-                  //     color: Colors.black12,
-                  //     offset: Offset(0, 2),
-                  //     blurRadius: 6.0,
-                  //   )
-                  // ],
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      'Main',
-                      style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 4),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            'Notifications',
+                            style: TextStyle(fontSize: 16),
+                          ),
+                          CupertinoSwitch(value: true, onChanged: (value) {})
+                        ],
+                      ),
                     ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text('Notifications'),
-                        CupertinoSwitch(value: true, onChanged: (value) {})
-                      ],
+                    Divider(color: Colors.grey[400]),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 7),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            'Notification time',
+                            style: TextStyle(fontSize: 16),
+                          ),
+                          Text(
+                            '10:10',
+                            style: TextStyle(
+                                fontSize: 16, fontWeight: FontWeight.bold),
+                          )
+                        ],
+                      ),
                     ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text('Notification time'),
-                        GestureDetector(
-                          onTap: () {
-                            // DatePicker.showTimePicker(context,
-                            //     showTitleActions: true,
-                            //     showSecondsColumn: false, onChanged: (date) {
-                            //   print('change $date');
-                            // }, onConfirm: (date) {
-                            //   print('confirm $date');
-                            // },
-                            //     currentTime: DateTime.now(),
-                            //     locale: LocaleType.en);
-                          },
-                          child: Text('10:10'),
-                        ),
-                      ],
+                    Divider(color: Colors.grey[400]),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 7),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            'Default currency',
+                            style: TextStyle(fontSize: 16),
+                          ),
+                          Text(
+                            'USD (\$)',
+                            style: TextStyle(
+                                fontSize: 16, fontWeight: FontWeight.bold),
+                          )
+                        ],
+                      ),
                     ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text('Default currency'),
-                        GestureDetector(
-                          onTap: () {
-                            // showCurrencyPicker(
-                            //     context: context,
-                            //     showFlag: true,
-                            //     onSelect: (Currency currency) {
-                            //       print(currency.code);
-                            //       print(currency.symbol);
-                            //     });
-                          },
-                          child: Text('USD (\$)'),
-                        )
-                      ],
-                    )
+                    Divider(color: Colors.grey[400]),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 4),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            'Show paused items',
+                            style: TextStyle(fontSize: 16),
+                          ),
+                          CupertinoSwitch(value: true, onChanged: (value) {})
+                        ],
+                      ),
+                    ),
                   ],
                 ),
               ),
