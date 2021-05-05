@@ -111,6 +111,43 @@ class SettingsScreen extends StatelessWidget {
               ),
             ),
           ),
+          SliverToBoxAdapter(
+            child: Container(
+              margin: const EdgeInsets.only(top: 20),
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: Container(
+                padding: const EdgeInsets.all(20),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Leave a subscription request',
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    ),
+                    const SizedBox(height: 20),
+                    CupertinoTextField(
+                      placeholder: 'Service name',
+                    ),
+                    const SizedBox(height: 15),
+                    CupertinoTextField(
+                      placeholder: 'Service url',
+                    ),
+                    const SizedBox(height: 15),
+                    CupertinoButton(
+                      child: Text('Send'),
+                      onPressed: () {},
+                      color: Colors.purple,
+                    )
+                  ],
+                ),
+              ),
+            ),
+          )
         ],
       ),
     );
