@@ -22,9 +22,9 @@ class StatisticsScreen extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 10),
               child: CupertinoSlidingSegmentedControl(
                 children: {
-                  0: Text('Segment 1'),
-                  1: Text('Segment 2'),
-                  2: Text('Segment 3'),
+                  0: Text('Все'),
+                  1: Text('За 3 месяца'),
+                  2: Text('За 6 месяцев'),
                 },
                 groupValue: 1,
                 onValueChanged: (index) {},
@@ -47,7 +47,7 @@ class StatisticsScreen extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          'Total subscriptions',
+                          'Мои подписки',
                           style: TextStyle(fontSize: 16),
                         ),
                         Text(
@@ -64,28 +64,11 @@ class StatisticsScreen extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          'Total subscriptions',
+                          'Сумма',
                           style: TextStyle(fontSize: 16),
                         ),
                         Text(
-                          '5',
-                          style: TextStyle(fontSize: 16),
-                        )
-                      ],
-                    ),
-                  ),
-                  Divider(color: Colors.grey[400]),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 7),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          'Total subscriptions',
-                          style: TextStyle(fontSize: 16),
-                        ),
-                        Text(
-                          '5',
+                          '500 ₽',
                           style: TextStyle(fontSize: 16),
                         )
                       ],
