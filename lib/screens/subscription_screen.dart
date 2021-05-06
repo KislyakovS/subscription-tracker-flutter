@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:subscription_tracker/config/palette.dart';
 import 'package:subscription_tracker/widgets/widgets.dart';
 
 class SubscriptionScreen extends StatelessWidget {
@@ -10,6 +11,7 @@ class SubscriptionScreen extends StatelessWidget {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(top: Radius.circular(25)),
       ),
+      backgroundColor: Palette.background,
       builder: (context) {
         return DraggableScrollableSheet(
           expand: false,
@@ -17,35 +19,38 @@ class SubscriptionScreen extends StatelessWidget {
           initialChildSize: 0.92,
           minChildSize: 0.92,
           builder: (context, scrollController) {
-            return Column(
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    IconButton(
-                      icon: Icon(
-                        CupertinoIcons.chevron_down,
-                        size: 30,
+            return Container(
+              padding: const EdgeInsets.all(10),
+              child: Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      IconButton(
+                        icon: Icon(
+                          CupertinoIcons.chevron_down,
+                          size: 30,
+                        ),
+                        onPressed: () => Navigator.of(context).pop(),
                       ),
-                      onPressed: () => Navigator.of(context).pop(),
-                    ),
-                    Flexible(
-                        child: Text(
-                      'Netflix',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 22,
-                      ),
-                    )),
-                    Opacity(
-                        opacity: 0.0,
-                        child: IconButton(
-                          icon: Icon(Icons.clear),
+                      Flexible(
+                          child: Text(
+                        'Netflix',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 22,
+                        ),
+                      )),
+                      TextButton(
                           onPressed: null,
-                        )),
-                  ],
-                )
-              ],
+                          child: Text(
+                            'Save',
+                            style: TextStyle(fontSize: 18),
+                          ))
+                    ],
+                  )
+                ],
+              ),
             );
           },
         );
