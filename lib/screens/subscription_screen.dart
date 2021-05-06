@@ -1,7 +1,58 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:subscription_tracker/widgets/widgets.dart';
 
 class SubscriptionScreen extends StatelessWidget {
+  void _showModal(BuildContext context) {
+    showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(25)),
+      ),
+      builder: (context) {
+        return DraggableScrollableSheet(
+          expand: false,
+          maxChildSize: 0.92,
+          initialChildSize: 0.92,
+          minChildSize: 0.92,
+          builder: (context, scrollController) {
+            return Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    IconButton(
+                      icon: Icon(
+                        CupertinoIcons.chevron_down,
+                        size: 30,
+                      ),
+                      onPressed: () => Navigator.of(context).pop(),
+                    ),
+                    Flexible(
+                        child: Text(
+                      'Netflix',
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 22,
+                      ),
+                    )),
+                    Opacity(
+                        opacity: 0.0,
+                        child: IconButton(
+                          icon: Icon(Icons.clear),
+                          onPressed: null,
+                        )),
+                  ],
+                )
+              ],
+            );
+          },
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -12,7 +63,10 @@ class SubscriptionScreen extends StatelessWidget {
           'Netflix',
           style: TextStyle(color: Colors.black),
         ),
-        actions: [IconButton(icon: Icon(Icons.edit), onPressed: () {})],
+        actions: [
+          IconButton(
+              icon: Icon(Icons.edit), onPressed: () => _showModal(context))
+        ],
       ),
       body: CustomScrollView(
         slivers: [
@@ -26,12 +80,11 @@ class SubscriptionScreen extends StatelessWidget {
             child: Container(
               padding: const EdgeInsets.all(20),
               margin: const EdgeInsets.only(top: 20),
-              //height: MediaQuery.of(context).size.height,
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(40),
-                  topRight: Radius.circular(40),
+                  topLeft: Radius.circular(25),
+                  topRight: Radius.circular(25),
                 ),
               ),
               child: Column(
