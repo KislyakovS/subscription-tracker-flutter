@@ -24,15 +24,15 @@ class SubscriptionScreen extends StatelessWidget {
               child: Column(
                 children: [
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      IconButton(
-                        icon: Icon(
-                          CupertinoIcons.chevron_down,
-                          size: 30,
-                        ),
-                        onPressed: () => Navigator.of(context).pop(),
-                      ),
+                      // IconButton(
+                      //   icon: Icon(
+                      //     CupertinoIcons.chevron_down,
+                      //     size: 30,
+                      //   ),
+                      //   onPressed: () => Navigator.of(context).pop(),
+                      // ),
                       Flexible(
                           child: Text(
                         'Netflix',
@@ -41,12 +41,130 @@ class SubscriptionScreen extends StatelessWidget {
                           fontSize: 22,
                         ),
                       )),
-                      TextButton(
-                          onPressed: null,
-                          child: Text(
-                            'Save',
-                            style: TextStyle(fontSize: 18),
-                          ))
+                      // TextButton(
+                      //   onPressed: null,
+                      //   child: Text(
+                      //     'Save',
+                      //     style: TextStyle(fontSize: 18),
+                      //   ),
+                      // )
+                    ],
+                  ),
+                  const SizedBox(height: 25),
+                  Column(
+                    children: [
+                      Container(
+                        width: 150,
+                        height: 150,
+                        decoration: BoxDecoration(
+                            color: Colors.grey[300],
+                            borderRadius: BorderRadius.circular(10)),
+                      ),
+                      const SizedBox(height: 50),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            'Title',
+                          ),
+                          Expanded(
+                            child: CupertinoTextField(
+                              placeholder: 'Hello',
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                              textAlign: TextAlign.right,
+                              decoration: BoxDecoration(
+                                border: Border.all(color: Colors.transparent),
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                      Divider(color: Colors.grey[400]),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text('Price'),
+                          Expanded(
+                            child: CupertinoTextField(
+                              placeholder: '100',
+                              keyboardType: TextInputType.number,
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                              textAlign: TextAlign.right,
+                              decoration: BoxDecoration(
+                                border: Border.all(color: Colors.transparent),
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                      Divider(color: Colors.grey[400]),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text('Currency'),
+                          Expanded(
+                            child: CupertinoTextField(
+                              placeholder: 'USD',
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                              textAlign: TextAlign.right,
+                              decoration: BoxDecoration(
+                                border: Border.all(color: Colors.transparent),
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                      Divider(color: Colors.grey[400]),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text('Period'),
+                          Expanded(
+                            child: CupertinoTextField(
+                              placeholder: 'Every 1 month',
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                              textAlign: TextAlign.right,
+                              decoration: BoxDecoration(
+                                border: Border.all(color: Colors.transparent),
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                      Divider(color: Colors.grey[400]),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text('Date'),
+                          Expanded(
+                            child: CupertinoTextField(
+                              placeholder: '29.10.2021',
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                              textAlign: TextAlign.right,
+                              decoration: BoxDecoration(
+                                border: Border.all(color: Colors.transparent),
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                      Divider(color: Colors.grey[400]),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text('Notifications'),
+                          Expanded(
+                            child: CupertinoTextField(
+                              placeholder: 'No',
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                              textAlign: TextAlign.right,
+                              decoration: BoxDecoration(
+                                border: Border.all(color: Colors.transparent),
+                              ),
+                            ),
+                          )
+                        ],
+                      )
                     ],
                   )
                 ],
