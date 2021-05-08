@@ -104,7 +104,13 @@ class _HomeScreenState extends State<HomeScreen> {
                   ...List.generate(2, (index) {
                     return Padding(
                       padding: const EdgeInsets.symmetric(vertical: 10),
-                      child: VerticalCard(),
+                      child: GestureDetector(
+                        onTap: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => SubscriptionScreen())),
+                        child: VerticalCard(),
+                      ),
                     );
                   }).toList(),
                   const SizedBox(height: 10),
@@ -115,7 +121,13 @@ class _HomeScreenState extends State<HomeScreen> {
                   ...List.generate(2, (index) {
                     return Padding(
                       padding: const EdgeInsets.symmetric(vertical: 10),
-                      child: VerticalCard(),
+                      child: GestureDetector(
+                        onTap: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => SubscriptionScreen())),
+                        child: VerticalCard(),
+                      ),
                     );
                   }).toList(),
                 ],
