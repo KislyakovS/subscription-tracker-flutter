@@ -1,8 +1,17 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:subscription_tracker/screens/subscription_screen.dart';
 import 'package:subscription_tracker/widgets/widgets.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
+  @override
+  _HomeScreenState createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  bool _isSearch = false;
+  double _height = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,11 +29,31 @@ class HomeScreen extends StatelessWidget {
                 size: 30,
                 color: Colors.black,
               ),
-              onPressed: () {})
+              onPressed: () {
+                setState(() {
+                  _isSearch = !_isSearch;
+                  if (_isSearch) {
+                    _height = 50;
+                  } else {
+                    _height = 0;
+                  }
+                });
+              })
         ],
       ),
       body: CustomScrollView(
         slivers: [
+          SliverToBoxAdapter(
+            child: AnimatedContainer(
+              duration: Duration(milliseconds: 70),
+              height: _height,
+              curve: Curves.bounceIn,
+              child: Container(
+                padding: const EdgeInsets.only(left: 20, right: 20, bottom: 10),
+                child: CupertinoSearchTextField(),
+              ),
+            ),
+          ),
           SliverToBoxAdapter(
             child: Container(
               padding: const EdgeInsets.symmetric(vertical: 10),
