@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:subscription_tracker/screens/screens.dart';
 import 'package:subscription_tracker/widgets/widgets.dart';
 
 class NewSubscriptionScreen extends StatelessWidget {
@@ -29,7 +30,13 @@ class NewSubscriptionScreen extends StatelessWidget {
                 size: 30,
                 color: Colors.black,
               ),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (BuildContext context) =>
+                            CreateSubscriptionScreen()));
+              },
             ),
           )
         ],
@@ -42,7 +49,16 @@ class NewSubscriptionScreen extends StatelessWidget {
             ...List.generate(100, (index) {
               return Padding(
                 padding: const EdgeInsets.symmetric(vertical: 5),
-                child: CreateCard(),
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (BuildContext context) =>
+                                CreateSubscriptionScreen()));
+                  },
+                  child: CreateCard(),
+                ),
               );
               //return CreateCard();
             }).toList()
