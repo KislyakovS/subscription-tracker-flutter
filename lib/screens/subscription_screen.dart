@@ -27,7 +27,9 @@ class SubscriptionScreen extends StatelessWidget {
             ),
             itemBuilder: (context) {
               return [
-                PopupMenuItem(child: Text('Edit'),),
+                PopupMenuItem(
+                  child: Text('Edit'),
+                ),
                 PopupMenuItem(child: Text('Paused')),
                 PopupMenuItem(child: Text('Delete')),
               ];
@@ -64,7 +66,6 @@ class SubscriptionScreen extends StatelessWidget {
                   const SizedBox(height: 10),
                   Container(
                     height: 250,
-                    //color: Colors.red,
                     child: Chart(),
                   ),
                   const SizedBox(height: 30),
