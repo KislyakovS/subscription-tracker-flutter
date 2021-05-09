@@ -34,14 +34,14 @@ class _BottomNavScreenState extends State<BottomNavScreen> {
         showUnselectedLabels: false,
         iconSize: 30,
         items: [
-          Icon(Icons.home_filled),
-          Icon(Icons.bar_chart),
-          Icon(Icons.add),
-          Icon(
+          const Icon(Icons.home_filled),
+          const Icon(Icons.bar_chart),
+          const Icon(Icons.add),
+          const Icon(
             Icons.calendar_today_rounded,
             size: 22,
           ),
-          Icon(Icons.settings)
+          const Icon(Icons.settings)
         ]
             .map(
               (icon) => BottomNavigationBarItem(

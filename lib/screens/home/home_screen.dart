@@ -16,6 +16,32 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   bool _isSearch = false;
   double _height = 0;
+  final double targetElevation = 3;
+  double _elevation = 0;
+  late ScrollController _controller;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = ScrollController();
+    _controller.addListener(_scrollListener);
+  }
+
+  void _scrollListener() {
+    double newElevation = _controller.offset > 1 ? targetElevation : 0;
+    if (_elevation != newElevation) {
+      setState(() {
+        _elevation = newElevation;
+      });
+    }
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    _controller.removeListener(_scrollListener);
+    _controller.dispose();
+  }
 
   void _pressedButtonSearch() {
     setState(() {
@@ -32,7 +58,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        elevation: 0,
+        elevation: _elevation,
         centerTitle: false,
         title: const Text(
           'Subscriptions',
@@ -50,6 +76,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ],
       ),
       body: CustomScrollView(
+        controller: _controller,
         slivers: [
           _SearchContainer(height: _height),
           _NearestContainer(),
