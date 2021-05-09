@@ -16,7 +16,7 @@ class NearestCard extends StatelessWidget {
       padding: const EdgeInsets.all(defaultPadding),
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.circular(borderRadiusImage),
+        borderRadius: BorderRadius.circular(defaultBorderRadius),
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,

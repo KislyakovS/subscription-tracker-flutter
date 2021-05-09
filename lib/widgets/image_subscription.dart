@@ -11,7 +11,7 @@ class ImageSubscription extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
-      borderRadius: BorderRadius.circular(borderRadiusImage),
+      borderRadius: BorderRadius.circular(defaultBorderRadius),
       child: Image.network(
         src,
         width: size,

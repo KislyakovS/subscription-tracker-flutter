@@ -81,7 +81,7 @@ class _ChartState extends State<Chart> {
                 x: 0,
                 barRods: [
                   BarChartRodData(
-                    y: 8,
+                    y: 4,
                     colors: [Colors.purple, Colors.deepPurple],
                   )
                 ],
@@ -139,6 +139,8 @@ class _ChartState extends State<Chart> {
               ),
             ],
           ),
+          swapAnimationDuration: const Duration(milliseconds: 150), // Optional
+          swapAnimationCurve: Curves.linear, // Optional
         ),
       ),
     );
