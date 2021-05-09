@@ -30,6 +30,8 @@ class _BottomNavScreenState extends State<BottomNavScreen> {
         type: BottomNavigationBarType.fixed,
         selectedItemColor: Colors.black,
         unselectedItemColor: Colors.grey,
+        showSelectedLabels: false,
+        showUnselectedLabels: false,
         iconSize: 30,
         items: [
           Icon(Icons.home_filled),
@@ -45,7 +47,6 @@ class _BottomNavScreenState extends State<BottomNavScreen> {
               (icon) => BottomNavigationBarItem(
                 label: '',
                 icon: icon,
-                backgroundColor: Colors.white,
               ),
             )
             .toList(),
