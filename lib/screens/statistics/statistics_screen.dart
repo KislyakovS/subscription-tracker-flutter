@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'package:subscription_tracker/config/constants.dart';
+import 'package:subscription_tracker/screens/history/history_screen.dart';
 import 'package:subscription_tracker/screens/home/data/nearest_sub.dart';
 import 'package:subscription_tracker/widgets/chart.dart';
 import 'package:subscription_tracker/widgets/widgets.dart';
@@ -173,18 +174,28 @@ class _History extends StatelessWidget {
       )
       .toList();
 
+  void onTapTitle(BuildContext context) {
+    Navigator.push(
+        context,
+        MaterialPageRoute<Widget>(
+            builder: (BuildContext contetext) => HistoryScreen()));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Wrapper(
-      title: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          const Text(
-            'Payment history',
-            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-          ),
-          const Icon(Icons.chevron_right)
-        ],
+      title: GestureDetector(
+        onTap: () => onTapTitle(context),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            const Text(
+              'Payment history',
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            ),
+            const Icon(Icons.chevron_right)
+          ],
+        ),
       ),
       child: ListView(
         scrollDirection: Axis.vertical,
