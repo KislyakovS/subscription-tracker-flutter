@@ -3,7 +3,7 @@ import 'package:subscription_tracker/config/constants.dart';
 import 'package:subscription_tracker/config/palette.dart';
 
 class Wrapper extends StatelessWidget {
-  final String? title;
+  final Widget? title;
   final Widget child;
 
   const Wrapper({Key? key, this.title, required this.child}) : super(key: key);
@@ -22,11 +22,7 @@ class Wrapper extends StatelessWidget {
           if (title != null)
             Column(
               children: [
-                Text(
-                  title!,
-                  style: const TextStyle(
-                      fontSize: 20, fontWeight: FontWeight.bold),
-                ),
+                title!,
                 const SizedBox(height: defaultPadding),
               ],
             ),

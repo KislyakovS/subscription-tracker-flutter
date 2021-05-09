@@ -176,7 +176,16 @@ class _History extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Wrapper(
-      title: 'Payment history',
+      title: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          const Text(
+            'Payment history',
+            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+          ),
+          const Icon(Icons.chevron_right)
+        ],
+      ),
       child: ListView(
         scrollDirection: Axis.vertical,
         physics: const NeverScrollableScrollPhysics(),
