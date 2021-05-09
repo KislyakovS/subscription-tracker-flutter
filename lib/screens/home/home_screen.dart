@@ -96,15 +96,9 @@ class _SearchContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverToBoxAdapter(
-      child: AnimatedContainer(
-        duration: const Duration(milliseconds: 70),
-        height: height,
-        curve: Curves.bounceIn,
-        child: Container(
-          padding: const EdgeInsets.only(
-              left: defaultPadding, right: defaultPadding, bottom: 10),
-          child: const CupertinoSearchTextField(),
-        ),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: defaultPadding),
+        child: Search(height: height),
       ),
     );
   }
