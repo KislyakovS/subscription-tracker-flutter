@@ -49,11 +49,11 @@ class _NewSubscriptionScreenState extends State<NewSubscriptionScreen> {
                 color: Colors.black,
               ),
               onPressed: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (BuildContext context) =>
-                            CreateSubscriptionScreen()));
+                // Navigator.push(
+                //     context,
+                //     MaterialPageRoute(
+                //         builder: (BuildContext context) =>
+                //             CreateSubscriptionScreen()));
               },
             ),
           )
@@ -78,11 +78,11 @@ class _NewSubscriptionScreenState extends State<NewSubscriptionScreen> {
                 padding: const EdgeInsets.symmetric(vertical: 5),
                 child: GestureDetector(
                   onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (BuildContext context) =>
-                                CreateSubscriptionScreen()));
+                    // Navigator.push(
+                    //     context,
+                    //     MaterialPageRoute(
+                    //         builder: (BuildContext context) =>
+                    //             CreateSubscriptionScreen()));
                   },
                   child: CreateCard(),
                 ),

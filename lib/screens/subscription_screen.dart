@@ -28,18 +28,18 @@ class SubscriptionScreen extends StatelessWidget {
                   child: Text('Edit'),
                   value: NavigationPopup.edit,
                 ),
-                PopupMenuItem(child: Text('Paused')),
-                PopupMenuItem(child: Text('Delete')),
+                // PopupMenuItem(child: Text('Paused')),
+                // PopupMenuItem(child: Text('Delete')),
               ];
             },
             onSelected: (result) {
               if (result == NavigationPopup.edit) {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => CreateSubscriptionScreen(),
-                  ),
-                );
+                // Navigator.push(
+                //   context,
+                //   MaterialPageRoute(
+                //     builder: (context) => CreateSubscriptionScreen(),
+                //   ),
+                // );
               }
             },
           ),

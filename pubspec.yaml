@@ -33,7 +33,12 @@ dependencies:
   # currency_picker: ^2.0.3
   fl_chart: ^0.36.0
   table_calendar: ^3.0.0
+  percent_indicator: ^3.0.1
+
   pedantic: ^1.11.0
+
+  intl: ^0.17.0
+
   
 
 dev_dependencies:

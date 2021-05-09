@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter subscriotions',
       theme: ThemeData(
         scaffoldBackgroundColor: Palette.background,
-        appBarTheme: AppBarTheme(
+        appBarTheme: const AppBarTheme(
           titleTextStyle: TextStyle(color: Colors.black),
           backgroundColor: Palette.background,
           brightness: Brightness.light,
