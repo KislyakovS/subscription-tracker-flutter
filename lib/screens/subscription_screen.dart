@@ -1,14 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:subscription_tracker/screens/create_subscription_screen.dart';
 import 'package:subscription_tracker/widgets/widgets.dart';
 
-class SubscriptionScreen extends StatelessWidget {
-  Widget _openMenu(BuildContext context) {
-    return PopupMenuButton(
-      itemBuilder: (context) => [PopupMenuItem(child: Text('12312311'))],
-    );
-  }
+enum NavigationPopup { edit }
 
+class SubscriptionScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,10 +26,21 @@ class SubscriptionScreen extends StatelessWidget {
               return [
                 PopupMenuItem(
                   child: Text('Edit'),
+                  value: NavigationPopup.edit,
                 ),
                 PopupMenuItem(child: Text('Paused')),
                 PopupMenuItem(child: Text('Delete')),
               ];
+            },
+            onSelected: (result) {
+              if (result == NavigationPopup.edit) {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => CreateSubscriptionScreen(),
+                  ),
+                );
+              }
             },
           ),
         ],
