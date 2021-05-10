@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:subscription_tracker/config/constants.dart';
 import 'package:subscription_tracker/screens/home/data/nearest_sub.dart';
+import 'package:subscription_tracker/widgets/list_subscripiton.dart';
 import 'package:subscription_tracker/widgets/widgets.dart';
 
 class HistoryScreen extends StatefulWidget {
@@ -37,12 +38,6 @@ class _HistoryScreenState extends State<HistoryScreen> {
     }
   }
 
-  final listWidgets = nearestSubs
-      .map(
-        (subscription) => SubscriptionItem(subscription: subscription),
-      )
-      .toList();
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -57,12 +52,7 @@ class _HistoryScreenState extends State<HistoryScreen> {
       body: SingleChildScrollView(
         padding: const EdgeInsets.symmetric(horizontal: defaultPadding),
         controller: _controller,
-        child: ListView(
-          scrollDirection: Axis.vertical,
-          physics: const NeverScrollableScrollPhysics(),
-          shrinkWrap: true,
-          children: listWidgets,
-        ),
+        child: ListSubscription(subscriptions: nearestSubs),
       ),
     );
   }

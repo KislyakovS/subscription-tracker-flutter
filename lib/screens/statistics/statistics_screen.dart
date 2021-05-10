@@ -5,6 +5,7 @@ import 'package:subscription_tracker/config/constants.dart';
 import 'package:subscription_tracker/screens/history/history_screen.dart';
 import 'package:subscription_tracker/screens/home/data/nearest_sub.dart';
 import 'package:subscription_tracker/widgets/chart.dart';
+import 'package:subscription_tracker/widgets/list_subscripiton.dart';
 import 'package:subscription_tracker/widgets/widgets.dart';
 
 class StatisticsScreen extends StatefulWidget {
@@ -168,12 +169,6 @@ class _Chart extends StatelessWidget {
 }
 
 class _History extends StatelessWidget {
-  final listWidgets = nearestSubs
-      .map(
-        (subscription) => SubscriptionItem(subscription: subscription),
-      )
-      .toList();
-
   void onTapTitle(BuildContext context) {
     Navigator.push(
         context,
@@ -197,12 +192,7 @@ class _History extends StatelessWidget {
           ],
         ),
       ),
-      child: ListView(
-        scrollDirection: Axis.vertical,
-        physics: const NeverScrollableScrollPhysics(),
-        shrinkWrap: true,
-        children: listWidgets,
-      ),
+      child: ListSubscription(subscriptions: nearestSubs),
     );
   }
 }
