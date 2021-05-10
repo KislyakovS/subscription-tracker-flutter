@@ -6,6 +6,7 @@ import 'package:subscription_tracker/screens/home/components/nearest_card.dart';
 import 'package:subscription_tracker/screens/home/data/action_sub.dart';
 import 'package:subscription_tracker/screens/home/data/nearest_sub.dart';
 import 'package:subscription_tracker/screens/home/data/paused_sub.dart';
+import 'package:subscription_tracker/widgets/list_subscripiton.dart';
 import 'package:subscription_tracker/widgets/widgets.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -136,28 +137,21 @@ class _ListContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverToBoxAdapter(
-      child: Container(
-        padding: const EdgeInsets.only(
-            top: 10, left: defaultPadding, right: defaultPadding),
-        child: ListView(
-          scrollDirection: Axis.vertical,
-          physics: const NeverScrollableScrollPhysics(),
-          shrinkWrap: true,
-          children: [
-            Text(
-              title,
-              style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-            ),
-            const SizedBox(height: 10),
-            ...list
-                .map(
-                  (subscription) =>
-                      SubscriptionItem(subscription: subscription),
-                )
-                .toList()
-          ],
-        ),
+        child: Padding(
+      padding: const EdgeInsets.only(
+          top: 10, left: defaultPadding, right: defaultPadding),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            title,
+            style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+          ),
+          const SizedBox(height: 10),
+          ListSubscription(subscriptions: list),
+          const SizedBox(height: defaultPadding)
+        ],
       ),
-    );
+    ));
   }
 }
