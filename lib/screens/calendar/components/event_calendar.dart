@@ -17,8 +17,6 @@ class EventCalendare extends StatefulWidget {
 }
 
 class _EventCalendareState extends State<EventCalendare> {
-  //final DateTime _focusedDay = widget.selectedDay;
-
   List<Subscription> _eventLoader(DateTime date) {
     return calendarData
         .where((element) => isSameDay(date, element.date))
