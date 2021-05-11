@@ -164,7 +164,7 @@ class _ListContainer extends StatelessWidget {
             style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
           ),
           const SizedBox(height: 10),
-          ListSubscription(subscriptions: list),
+          ListSubscription(subscriptions: list, isNavigator: true),
           const SizedBox(height: defaultPadding)
         ],
       ),
