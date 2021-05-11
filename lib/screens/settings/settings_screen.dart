@@ -10,7 +10,6 @@ class SettingsScreen extends StatefulWidget {
 }
 
 class _SettingsScreenState extends State<SettingsScreen> {
-  int _indexSliding = 0;
   final double targetElevation = 3;
   double _elevation = 0;
   late ScrollController _controller;
@@ -42,7 +41,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        elevation: 0,
+        elevation: _elevation,
         centerTitle: false,
         title: const Text(
           'Settings',
