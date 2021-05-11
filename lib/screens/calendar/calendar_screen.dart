@@ -24,6 +24,7 @@ class _CalendarScreenState extends State<CalendarScreen> {
     super.initState();
     _controller = ScrollController();
     _controller.addListener(_scrollListener);
+    _selectedSubscription = filterSubscription(_selectedDay);
   }
 
   @override
@@ -46,11 +47,13 @@ class _CalendarScreenState extends State<CalendarScreen> {
     if (!isSameDay(_selectedDay, selectedDay)) {
       setState(() {
         _selectedDay = selectedDay;
-        _selectedSubscription = calendarData
-            .where((element) => isSameDay(selectedDay, element.date))
-            .toList();
+        _selectedSubscription = filterSubscription(selectedDay);
       });
     }
+  }
+
+  List<Subscription> filterSubscription(DateTime date) {
+    return calendarData.where((sub) => isSameDay(date, sub.date)).toList();
   }
 
   @override
