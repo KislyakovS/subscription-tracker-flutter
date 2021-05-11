@@ -50,7 +50,7 @@ class SubscriptionScreen extends StatelessWidget {
           SliverToBoxAdapter(
             child: Container(
               padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: VerticalCard(),
+              //child: VerticalCard(),
             ),
           ),
           SliverToBoxAdapter(
@@ -89,7 +89,7 @@ class SubscriptionScreen extends StatelessWidget {
                       ...List.generate(10, (index) {
                         return Padding(
                           padding: const EdgeInsets.symmetric(vertical: 10),
-                          child: VerticalCard(),
+                          //child: VerticalCard(),
                         );
                       }).toList()
                     ],

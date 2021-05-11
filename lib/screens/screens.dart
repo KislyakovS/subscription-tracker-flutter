@@ -3,6 +3,6 @@ export 'home/home_screen.dart';
 export 'statistics/statistics_screen.dart';
 export 'new_subscription/new_subscription_screen.dart';
 export 'calendar/calendar_screen.dart';
-export 'settings_screen.dart';
+export 'settings/settings_screen.dart';
 export 'subscription_screen.dart';
 export 'create_subscription_screen.dart';
