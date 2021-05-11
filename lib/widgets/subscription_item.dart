@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:subscription_tracker/config/constants.dart';
 import 'package:subscription_tracker/models/subscription.dart';
 import 'package:subscription_tracker/widgets/image_subscription.dart';
 
@@ -12,7 +11,6 @@ class SubscriptionItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      //padding: const EdgeInsets.only(bottom: defaultPadding),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [

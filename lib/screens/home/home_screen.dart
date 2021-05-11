@@ -6,6 +6,7 @@ import 'package:subscription_tracker/screens/home/components/nearest_card.dart';
 import 'package:subscription_tracker/screens/home/data/action_sub.dart';
 import 'package:subscription_tracker/screens/home/data/nearest_sub.dart';
 import 'package:subscription_tracker/screens/home/data/paused_sub.dart';
+import 'package:subscription_tracker/screens/screens.dart';
 import 'package:subscription_tracker/widgets/list_subscripiton.dart';
 import 'package:subscription_tracker/widgets/widgets.dart';
 
@@ -106,11 +107,26 @@ class _SearchContainer extends StatelessWidget {
 }
 
 class _NearestContainer extends StatelessWidget {
-  final listWidgets = nearestSubs
-      .map(
-        (subscription) => NearestCard(subscription: subscription),
-      )
-      .toList();
+  void _onTapSubscription(BuildContext context, Subscription subscription) {
+    Navigator.push(
+      context,
+      MaterialPageRoute<void>(
+        builder: (BuildContext context) =>
+            SubscriptionScreen(subscription: subscription),
+      ),
+    );
+  }
+
+  List<Widget> getListWidgets(BuildContext context) {
+    return nearestSubs.map(
+      (subscription) {
+        return GestureDetector(
+          onTap: () => _onTapSubscription(context, subscription),
+          child: NearestCard(subscription: subscription),
+        );
+      },
+    ).toList();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -121,7 +137,7 @@ class _NearestContainer extends StatelessWidget {
         child: ListView(
             padding: const EdgeInsets.only(left: defaultPadding),
             scrollDirection: Axis.horizontal,
-            children: listWidgets),
+            children: getListWidgets(context)),
       ),
     );
   }
