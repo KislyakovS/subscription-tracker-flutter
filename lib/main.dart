@@ -4,7 +4,7 @@ import 'package:subscription_tracker/config/palette.dart';
 import 'package:subscription_tracker/screens/screens.dart';
 
 void main() {
-  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+  SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
     //Lets make the Status Bar Transparent
     statusBarColor: Colors.transparent,
     systemNavigationBarColor: Palette.background,
