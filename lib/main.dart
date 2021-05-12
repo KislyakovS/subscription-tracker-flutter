@@ -1,8 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:subscription_tracker/config/palette.dart';
 import 'package:subscription_tracker/screens/screens.dart';
 
 void main() {
+  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+    //Lets make the Status Bar Transparent
+    statusBarColor: Colors.transparent,
+    systemNavigationBarColor: Palette.background,
+
+    //Lets make the status bar icon brightness to bright
+    statusBarIconBrightness: Brightness.light,
+    systemNavigationBarIconBrightness: Brightness.dark,
+  ));
   runApp(MyApp());
 }
 
