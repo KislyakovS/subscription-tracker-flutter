@@ -2,7 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'package:subscription_tracker/models/subscription.dart';
+import 'package:subscription_tracker/screens/serach_logo/serach_logo_screen.dart';
 import 'package:subscription_tracker/widgets/image_subscription.dart';
+import 'package:subscription_tracker/widgets/widgets.dart';
 
 class FormItem {
   final String label;
@@ -12,7 +14,7 @@ class FormItem {
 }
 
 class FormSubscriptionScreen extends StatefulWidget {
-  final Subscription subscription;
+  final Subscription? subscription;
 
   final List<FormItem> formItems = [
     FormItem(
@@ -83,8 +85,7 @@ class FormSubscriptionScreen extends StatefulWidget {
     ),
   ];
 
-  FormSubscriptionScreen({Key? key, required this.subscription})
-      : super(key: key);
+  FormSubscriptionScreen({Key? key, this.subscription}) : super(key: key);
 
   @override
   _FormSubscriptionScreenState createState() => _FormSubscriptionScreenState();
@@ -125,7 +126,7 @@ class _FormSubscriptionScreenState extends State<FormSubscriptionScreen> {
         elevation: _elevation,
         iconTheme: const IconThemeData(color: Colors.black),
         title: Text(
-          widget.subscription.title,
+          widget.subscription?.title ?? 'New subscription',
           style: const TextStyle(color: Colors.black),
         ),
         actions: [
@@ -144,8 +145,9 @@ class _FormSubscriptionScreenState extends State<FormSubscriptionScreen> {
         child: Column(
           children: [
             Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                ImageSubscription(src: widget.subscription.image, size: 150),
+                _Image(src: widget.subscription?.image),
                 const SizedBox(height: 50),
                 ...widget.formItems
                     .asMap()
@@ -162,6 +164,36 @@ class _FormSubscriptionScreenState extends State<FormSubscriptionScreen> {
         ),
       ),
     );
+  }
+}
+
+class _Image extends StatelessWidget {
+  final String? src;
+
+  const _Image({Key? key, this.src}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    if (src != null) {
+      return ImageSubscription(src: src!, size: 150);
+    }
+
+    return IconButton(
+        iconSize: 150,
+        color: Colors.black,
+        onPressed: () {
+          showModalBottomSheet<DraggableScrollableSheet>(
+            context: context,
+            isScrollControlled: true,
+            backgroundColor: Colors.transparent,
+            builder: (_) {
+              return SearchLogoScreen();
+            },
+          );
+        },
+        icon: const Icon(
+          Icons.add_photo_alternate_outlined,
+        ));
   }
 }
 

@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:subscription_tracker/config/constants.dart';
+import 'package:subscription_tracker/screens/form_subscription/form_subscription_screen.dart';
 import 'package:subscription_tracker/screens/new_subscription/data/subscriptions.dart';
 import 'package:subscription_tracker/widgets/widgets.dart';
 
@@ -79,7 +80,14 @@ class _NewSubscriptionScreenState extends State<NewSubscriptionScreen> {
                 size: 30,
                 color: Colors.black,
               ),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute<void>(
+                    builder: (BuildContext context) => FormSubscriptionScreen(),
+                  ),
+                );
+              },
             ),
           )
         ],

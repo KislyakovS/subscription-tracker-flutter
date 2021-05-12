@@ -153,21 +153,22 @@ class _ListContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverToBoxAdapter(
-        child: Padding(
-      padding: const EdgeInsets.only(
-          top: 10, left: defaultPadding, right: defaultPadding),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            title,
-            style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-          ),
-          const SizedBox(height: 10),
-          ListSubscription(subscriptions: list, isNavigator: true),
-          const SizedBox(height: defaultPadding)
-        ],
+      child: Padding(
+        padding: const EdgeInsets.only(
+            top: 10, left: defaultPadding, right: defaultPadding),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              title,
+              style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 10),
+            ListSubscription(subscriptions: list, isNavigator: true),
+            const SizedBox(height: defaultPadding)
+          ],
+        ),
       ),
-    ));
+    );
   }
 }
