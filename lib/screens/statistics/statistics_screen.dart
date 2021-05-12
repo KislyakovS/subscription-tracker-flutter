@@ -61,19 +61,17 @@ class _StatisticsScreenState extends State<StatisticsScreen> {
       ),
       body: SingleChildScrollView(
         controller: _controller,
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: defaultPadding),
-          child: Column(
-            children: [
-              _Sliding(index: _indexSliding, onChange: _onChangeSliding),
-              const SizedBox(height: defaultPadding),
-              _Info(),
-              const SizedBox(height: defaultPadding),
-              _Chart(),
-              const SizedBox(height: defaultPadding),
-              _History(),
-            ],
-          ),
+        padding: const EdgeInsets.symmetric(horizontal: defaultPadding),
+        child: Column(
+          children: [
+            _Sliding(index: _indexSliding, onChange: _onChangeSliding),
+            const SizedBox(height: defaultPadding),
+            _Info(),
+            const SizedBox(height: defaultPadding),
+            _Chart(),
+            const SizedBox(height: defaultPadding),
+            _History(),
+          ],
         ),
       ),
     );

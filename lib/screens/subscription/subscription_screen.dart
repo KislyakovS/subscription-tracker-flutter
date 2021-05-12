@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:subscription_tracker/config/constants.dart';
 import 'package:subscription_tracker/models/subscription.dart';
+import 'package:subscription_tracker/screens/screens.dart';
 import 'package:subscription_tracker/widgets/list_subscripiton.dart';
 import 'package:subscription_tracker/widgets/widgets.dart';
 
@@ -63,7 +64,18 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
                 ),
               ];
             },
-            onSelected: (result) {},
+            onSelected: (result) {
+              if (result == 1) {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute<FormSubscriptionScreen>(
+                    builder: (BuildContext context) => FormSubscriptionScreen(
+                      subscription: widget.subscription,
+                    ),
+                  ),
+                );
+              }
+            },
             child: const Padding(
               padding: EdgeInsets.only(right: 10),
               child: Icon(Icons.more_vert),
